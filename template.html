@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Guillaume Brioudes" />
+    <meta name="dcterms.date" content="$date-meta$" />
+    <title>$title$</title>
+
+    <style>
+        body {
+            font-family: 'Inconsolata', sans-serif;
+            font-size: 14px;
+        }
+
+        nav {
+            page-break-after: always;
+        }
+
+        nav li {
+            line-height: 160%;
+        }
+
+        hr {
+            display: none;
+            page-break-after: always;
+        }
+
+        .titraille {
+            margin-bottom: 1.2em;
+        }
+
+        div + div {
+            margin-top: 1em;
+        }
+
+        h1.title {
+            font-size: 3em;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .csl-entry:not(:first-of-type) { margin-top: 1em; }
+        .csl-entry { text-indent: 2em; }
+
+        @page {
+            size: A4;
+            margin: 20mm 30mm;
+
+            @bottom-right {
+                content: counter(page);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    
+        <div class="titraille">
+            <h1 class="title">$title$</h1>
+
+            <div class="author">Guillaume Brioudes</div>
+            <div class="date">$date$</div>
+    
+        </div>
+    
+    
+        $if(toc)$
+        <nav id="$idprefix$TOC" role="doc-toc">
+        $table-of-contents$
+        </nav>
+        $endif$
+        
+    </header>
+    
+    <main>
+        $body$
+    </main>
+    
+</body>
+
+</html>
